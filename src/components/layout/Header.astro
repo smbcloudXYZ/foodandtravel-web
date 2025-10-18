@@ -1,0 +1,43 @@
+---
+import { SITE } from '@/config'
+import ThemeToggle from '@/components/ui/ThemeToggle.astro'
+import { Image } from 'astro:assets'
+---
+
+<header class="mb-7">
+  <nav class="flex justify-between items-center">
+    <div class="relative flex items-center gap-2">
+      {
+        SITE.favicon && (
+          <img src="/favicon.svg" alt="favicon" class="absolute w-4.5 h-4.5 -bottom-14 left-0" />
+        )
+      }
+      <a
+        href="/"
+        class="font-bold text-food-orange text-xl font-sans no-underline min-w-[3rem] inline-block"
+        >{SITE.title}</a
+      >
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="flex flex-col gap-2 md:flex-row">
+        <a href="https://apps.apple.com/se/app/pepak-basa-jawa-komplit/id6752241812">
+          <Image
+            src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+            alt="FatApp Apple AppStore page"
+            width="150"
+            height="50"
+          />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.theblangkon.pepakbasajawa">
+          <Image
+            src="/images/GetItOnGooglePlay_Badge_Web_color_English.png"
+            alt="FatApp Google PlayStore page"
+            width="150"
+            height="50"
+          />
+        </a>
+      </div>
+      <ThemeToggle />
+    </div>
+  </nav>
+</header>

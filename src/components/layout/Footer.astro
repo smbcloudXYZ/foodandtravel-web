@@ -1,0 +1,54 @@
+---
+import { SITE } from '@/config'
+const today = new Date()
+---
+
+<footer class="mt-16 text-s font-light leading-[1.75] text-text-secondary font-sans w-full">
+  <div class="flex flex-col gap-6 w-full">
+    <div class="pb-4 border-b border-border">
+      <nav class="flex gap-6 justify-center flex-wrap">
+        <a
+          href="/contact"
+          class="text-text-secondary px-1 py-0.5 rounded transition-all duration-200 hover:text-text-primary hover:bg-code-bg no-underline"
+          >Contact</a
+        >
+        <a
+          href="/privacy-policy"
+          class="text-text-secondary px-1 py-0.5 rounded transition-all duration-200 hover:text-text-primary hover:bg-code-bg no-underline"
+          >Privacy Policy</a
+        >
+        <a
+          href="/terms-of-use"
+          class="text-text-secondary px-1 py-0.5 rounded transition-all duration-200 hover:text-text-primary hover:bg-code-bg no-underline"
+          >Terms of Use</a
+        >
+      </nav>
+    </div>
+    <div
+      class="flex justify-between items-center flex-nowrap w-full md:flex-row md:text-left text-center flex-col gap-3"
+    >
+      <div class="whitespace-nowrap">
+        <span class="date">&copy; {today.getFullYear()}</span>
+        <a
+          href="https://5mb.app"
+          target="__blank"
+          class="ml-1 text-text-secondary hover:text-text-primary transition-colors"
+          >{SITE.author}</a
+        >
+      </div>
+      <div class="whitespace-nowrap">
+        Powered by{' '}
+        <a
+          href="https://smbcloud.xyz"
+          target="__blank"
+          class="text-text-secondary hover:text-text-primary transition-colors">smbCloud</a
+        > |{' '}
+        <a
+          href="https://github.com/smbcloudXYZ/pepakbasajawa-web"
+          target="__blank"
+          class="text-text-secondary hover:text-text-primary transition-colors">Source</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>

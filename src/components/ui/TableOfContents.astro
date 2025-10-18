@@ -1,0 +1,334 @@
+---
+import { SITE } from '@/config'
+import type { TOCProps } from '@/types'
+
+const { toc = [] }: TOCProps = Astro.props
+---
+
+<div class="toc-container" id="toc">
+  <nav class="toc-nav">
+    <ul class="toc-list" id="toc-list">
+      <!-- Back to top link -->
+      <li class="toc-item toc-level-0">
+        <a href="#" class="toc-link toc-title" title="Back to top" data-text="Back to top">
+          Back to top
+        </a>
+      </li>
+
+      <!-- TOC items -->
+      {
+        toc.map((item) => (
+          <li class={`toc-item toc-level-${item.level}`}>
+            <a
+              href={`#${item.id}`}
+              class="toc-link"
+              title={item.text}
+              data-text={item.text}
+              data-heading-id={item.id}
+            >
+              {item.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<script
+  is:inline
+  define:vars={{
+    contentWidth: SITE.contentWidth,
+    centeredLayout: SITE.centeredLayout,
+    toc: SITE.toc
+  }}
+>
+  ;(function () {
+    let isInitialized = false
+
+    // TOC positioning logic (similar to BackButton)
+    function adjustTOCPosition() {
+      const tocContainer = document.querySelector('.toc-container')
+      if (!tocContainer) return
+
+      // If not using centered layout, hide TOC
+      if (!centeredLayout) {
+        tocContainer.style.display = 'none'
+        return
+      }
+
+      // Calculate available margin space for positioning
+      const pageWidth = window.innerWidth
+      const contentWidthValue = parseFloat(contentWidth)
+      const margin = (pageWidth - contentWidthValue * 16) / 2
+      const baseMinSpace = 11 * 16 // Base minimum space needed
+      // If toc is enabled, need additional 2.5rem (40px) space
+      const minSpace = toc ? baseMinSpace + 40 : baseMinSpace
+
+      // Show and position TOC fixed on the left if there's enough space
+      if (margin >= minSpace) {
+        tocContainer.style.display = 'block'
+        tocContainer.classList.add('fixed-position')
+        const basePosition = margin - baseMinSpace
+        // If toc is enabled, move 2.5rem (40px) further left
+        const leftPosition = toc ? basePosition - 40 : basePosition
+        tocContainer.style.left = `${leftPosition}px`
+      } else {
+        tocContainer.style.display = 'none'
+        tocContainer.classList.remove('fixed-position')
+        tocContainer.style.left = ''
+      }
+    }
+
+    // Hide TOC if there are no headings (only title)
+    function checkTOCVisibility() {
+      const tocContainer = document.querySelector('.toc-container')
+      const tocItems = document.querySelectorAll('.toc-item:not(.toc-level-0)')
+
+      if (tocContainer && tocItems.length === 0) {
+        tocContainer.style.display = 'none'
+      }
+    }
+
+    // Add click handlers to TOC links using event delegation
+    function addTOCEventListeners() {
+      const tocContainer = document.querySelector('.toc-container')
+      if (!tocContainer) return
+
+      // Use event delegation for better performance and reliability
+      tocContainer.addEventListener('click', function (e) {
+        const link = e.target.closest('.toc-link')
+        if (!link) return
+
+        e.preventDefault()
+
+        if (link.classList.contains('toc-title')) {
+          // Back to top
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+          history.pushState(null, null, '#')
+        } else {
+          // TOC item
+          const href = link.getAttribute('href')
+          if (href && href.startsWith('#')) {
+            const targetId = href.substring(1)
+            const target = document.getElementById(targetId)
+            if (target) {
+              const rect = target.getBoundingClientRect()
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+              const offset = rect.top + scrollTop - 96 // 6rem = 96px
+              window.scrollTo({ top: offset, behavior: 'smooth' })
+              history.pushState(null, null, href)
+            }
+          }
+        }
+      })
+    }
+
+    // Update active TOC item based on scroll position
+    function updateActiveTOCItem() {
+      const tocLinks = document.querySelectorAll('.toc-link')
+      const headings = document.querySelectorAll('h1, h2, h3')
+
+      let currentActive = null
+      const scrollTop = window.pageYOffset + 100 // Offset for better detection
+
+      // Check headings
+      headings.forEach((heading, index) => {
+        if (index === 0 && heading.tagName === 'H1') return
+
+        const rect = heading.getBoundingClientRect()
+        const offsetTop = rect.top + window.pageYOffset
+
+        if (scrollTop >= offsetTop) {
+          currentActive = heading.id
+        }
+      })
+
+      tocLinks.forEach((link) => {
+        link.classList.remove('active')
+        if (link.getAttribute('href') === `#${currentActive}`) {
+          link.classList.add('active')
+        }
+      })
+
+      // Always highlight the first item ("Back to top") unless another TOC item is active
+      if (!currentActive) {
+        const titleLink = document.querySelector('.toc-link.toc-title')
+        if (titleLink) {
+          titleLink.classList.add('active')
+        }
+      }
+    }
+
+    function initTOC() {
+      if (isInitialized) return
+
+      adjustTOCPosition()
+      checkTOCVisibility()
+      addTOCEventListeners()
+      updateActiveTOCItem() // Initial active state
+
+      isInitialized = true
+    }
+
+    // Initialize on page load
+    function handlePageLoad() {
+      initTOC()
+    }
+
+    // Listen for various page load events
+    document.addEventListener('astro:page-load', handlePageLoad)
+    document.addEventListener('DOMContentLoaded', handlePageLoad)
+
+    // Also initialize immediately if DOM is already loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', handlePageLoad)
+    } else {
+      handlePageLoad()
+    }
+
+    // Re-initialize on resize and scroll
+    window.addEventListener('resize', adjustTOCPosition)
+    window.addEventListener('scroll', updateActiveTOCItem)
+  })()
+</script>
+
+<style is:global>
+  .toc-container {
+    width: 12rem;
+    position: relative;
+    left: -0.175em;
+  }
+
+  .toc-nav {
+    font-family: var(--font-serif);
+    font-size: var(--font-size-s);
+    line-height: 1.5;
+  }
+
+  .toc-list {
+    list-style: none;
+    list-style-type: none;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .toc-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .toc-item {
+    list-style: none;
+    list-style-type: none;
+  }
+
+  .toc-item::before {
+    display: none;
+  }
+
+  .toc-item::marker {
+    display: none;
+  }
+
+  .toc-link {
+    display: block;
+    color: transparent;
+    text-decoration: none;
+    position: relative;
+    padding-left: 0;
+    height: 1.125rem;
+    width: 100%;
+    min-height: 1rem;
+    font-size: 0;
+    line-height: 1.125rem;
+    text-indent: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition:
+      color 0.2s ease-out,
+      font-size 0.2s ease-out,
+      text-indent 0.2s ease-out;
+    cursor: pointer;
+  }
+
+  .toc-link::after {
+    content: attr(data-text);
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    font-family: var(--font-sans);
+    font-size: var(--font-size-s);
+    letter-spacing: var(--spacing-m);
+    line-height: 1.125rem;
+    color: var(--text-primary);
+    opacity: 0;
+    transition:
+      opacity 0.2s ease-out,
+      left 0.2s ease-out;
+    pointer-events: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .toc-link:hover::after {
+    opacity: 1;
+    left: -0.75rem;
+  }
+
+  .toc-level-0 .toc-link:hover::after {
+    opacity: 0;
+  }
+
+  .toc-level-1 .toc-link:hover::before,
+  .toc-level-2 .toc-link:hover::before,
+  .toc-level-3 .toc-link:hover::before {
+    width: 0.75rem;
+    transition: width 0.1s ease-out;
+  }
+
+  .toc-link.active {
+    color: var(--text-primary);
+  }
+
+  /* Horizontal line indicators */
+  .toc-level-0 .toc-link::before,
+  .toc-level-1 .toc-link::before,
+  .toc-level-2 .toc-link::before,
+  .toc-level-3 .toc-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 2.5rem;
+    height: 1px;
+    background-color: var(--text-tertiary);
+    transform: translateY(-50%);
+    opacity: 0.4;
+    transition: all 0.1s ease-out;
+  }
+
+  .toc-link:hover::before,
+  .toc-link.active::before {
+    opacity: 0.8;
+    background-color: var(--text-primary);
+  }
+
+  .toc-container.fixed-position {
+    position: fixed;
+    top: 12rem; /* Position below BackButton */
+    margin-top: 0;
+    padding-left: 1rem;
+    z-index: 10;
+  }
+
+  /* Hide on mobile and when space is limited */
+  @media (max-width: 768px) {
+    .toc-container {
+      display: none !important;
+    }
+  }
+</style>

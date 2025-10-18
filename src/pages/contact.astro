@@ -1,0 +1,93 @@
+---
+import IndexLayout from '@/layouts/IndexLayout.astro'
+import { SITE } from '@/config'
+---
+
+<IndexLayout title={`Contact - ${SITE.title}`} description="Get in touch with FatApp">
+  <div class="contact-page prose">
+    <h1>Contact Us</h1>
+
+    <p>
+      Have questions about learning Javanese language? Want to contribute to our content? We'd love
+      to hear from you!
+    </p>
+
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>Feel free to reach out to us via email:</p>
+
+      <div class="email-section">
+        <a href="mailto:splitfire@setoelkahfi.se" class="email-link"> splitfire@setoelkahfi.se </a>
+      </div>
+
+      <p>We'll do our best to respond to your inquiry as soon as possible.</p>
+    </div>
+
+    <div class="topics">
+      <h2>What can you contact us about?</h2>
+      <ul>
+        <li>Questions about Javanese language learning materials</li>
+        <li>Suggestions for new content or improvements</li>
+        <li>Technical issues with the website</li>
+        <li>Collaboration opportunities</li>
+        <li>General feedback about FatApp</li>
+      </ul>
+    </div>
+  </div>
+</IndexLayout>
+
+<style>
+  .contact-page {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .contact-info {
+    margin: 2rem 0;
+  }
+
+  .email-section {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--code-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+  }
+
+  .email-link {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .email-link:hover {
+    text-decoration: underline;
+  }
+
+  .topics {
+    margin: 2rem 0;
+  }
+
+  .topics ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+
+  .topics li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .contact-page {
+      padding: 1rem 0;
+    }
+
+    .email-link {
+      font-size: 1.1rem;
+    }
+  }
+</style>

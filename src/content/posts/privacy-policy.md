@@ -57,9 +57,9 @@ Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Kami akan memb
 
 Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini atau praktik kami, silakan hubungi kami di:
 
-Email: [info@fatapp.5mb.com](mailto:info@fatapp.5mb.com)
+Email: [info@fatapp.5mb.app](mailto:info@fatapp.5mb.app)
 
-Situs web: [https://fatapp.5mb.com/](https://fatapp.5mb.com/)
+Situs web: [https://fatapp.5mb.app/](https://fatapp.5mb.app/)
 
 ---
 

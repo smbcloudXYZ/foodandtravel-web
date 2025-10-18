@@ -1,6 +1,6 @@
 export const SITE = {
   // SITE INFO ///////////////////////////////////////////////////////////////////////////////////////////
-  website: 'https://fatapp.5mb.com/', // Site domain
+  website: 'https://fatapp.5mb.app/', // Site domain
   title: 'FatApp', // Site title
   author: 'Splitfire AB', // Author name
   description: 'FatApp - 4.5+ Star Restaurants', // Site description

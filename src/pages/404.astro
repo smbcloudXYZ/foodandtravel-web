@@ -8,6 +8,18 @@ import { SITE } from '@/config'
     .error-container {
       color: var(--text-secondary);
     }
+    .error-actions a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 1rem;
+    }
   </style>
-  <p class="error-container">Page Not Found...</p>
+  <div class="error-container">
+    <h1>Halaman Tidak Ditemukan</h1>
+    <p>
+      Sepertinya halaman yang Anda cari tidak ada atau telah dipindahkan. Kembali ke <a href="/"
+        >Beranda</a
+      > atau kunjungi <a href="/contact">Halaman Kontak</a> jika Anda membutuhkan bantuan.
+    </p>
+  </div>
 </IndexLayout>

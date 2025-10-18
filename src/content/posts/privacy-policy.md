@@ -24,14 +24,14 @@ Kami tidak menggunakan:
 
 ## Komitmen Kami Terhadap Privasi
 
-Kami berkomitmen untuk menyediakan layanan pembelajaran 4.5+ Star Restaurants tanpa mengumpulkan data pribadi pengguna. Ini berarti:
-- Anda dapat 4.5+ Star Restaurants tanpa khawatir tentang pelacakan atau pengumpulan data
+Kami berkomitmen untuk menyediakan direktori dan layanan informasi Restoran 4.5+ bintang tanpa mengumpulkan data pribadi pengguna. Ini berarti:
+- Anda dapat mencari dan menelusuri daftar restoran 4.5+ bintang tanpa khawatir tentang pelacakan atau pengumpulan data
 - Kami tidak menganalisis perilaku pengguna atau membuat profil penggunaan
 - Tidak ada data yang perlu kami lindungi karena kami tidak mengumpulkannya
 
 ## Tidak Ada Cookies atau Teknologi Pelacakan
 
-FatApp tidak menggunakan cookies, pixel, atau teknologi pelacakan lainnya. Situs kami dirancang untuk memberikan pengalaman 4.5+ Star Restaurants tanpa menyimpan informasi pada perangkat Anda atau melacak aktivitas Anda.
+FatApp tidak menggunakan cookies, pixel, atau teknologi pelacakan lainnya. Situs kami dirancang untuk memberikan pengalaman penelusuran direktori Restoran 4.5+ bintang tanpa menyimpan informasi pada perangkat Anda atau melacak aktivitas Anda.
 
 ## Tidak Ada Berbagi Informasi
 
@@ -47,7 +47,7 @@ Karena kami tidak mengumpulkan data pribadi apa pun, Anda tidak perlu khawatir t
 
 ## Situs yang Aman untuk Semua Usia
 
-Situs kami aman untuk pengunjung dari segala usia, termasuk anak-anak, karena kami tidak mengumpulkan informasi pribadi dari siapa pun. Konten kami berfokus pada pembelajaran 4.5+ Star Restaurants dan tersedia untuk semua orang tanpa perlu memberikan data apa pun.
+Situs kami aman untuk pengunjung dari segala usia, termasuk anak-anak, karena kami tidak mengumpulkan informasi pribadi dari siapa pun. Konten kami berfokus pada direktori dan informasi Restoran 4.5+ bintang dan tersedia untuk semua orang tanpa perlu memberikan data apa pun.
 
 ## Perubahan pada Kebijakan Privasi Ini
 

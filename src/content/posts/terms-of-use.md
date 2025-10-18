@@ -18,7 +18,7 @@ FatApp berhak untuk mengubah Ketentuan Penggunaan ini kapan saja. Perubahan akan
 ## 3. Penggunaan Situs
 
 ### 3.1 Izin Penggunaan
-Anda diizinkan untuk mengakses dan menggunakan Situs ini hanya untuk tujuan pembelajaran 4.5+ Star Restaurants dan tujuan non-komersial lainnya yang sah.
+Anda diizinkan untuk mengakses dan menggunakan Situs ini hanya untuk tujuan mencari informasi direktori Restoran 4.5+ bintang dan tujuan non-komersial lainnya yang sah.
 
 ### 3.2 Larangan
 Anda dilarang untuk:
@@ -31,7 +31,7 @@ Anda dilarang untuk:
 ## 4. Kekayaan Intelektual
 
 ### 4.1 Hak Cipta
-Semua konten yang tersedia di Situs ini, termasuk tetapi tidak terbatas pada teks, grafik, logo, ikon, gambar, klip audio, unduhan digital, dan kompilasi data, adalah milik PepakBasaJawa atau pemberi lisensinya dan dilindungi oleh hukum hak cipta Indonesia dan internasional.
+Semua konten yang tersedia di Situs ini, termasuk tetapi tidak terbatas pada teks, grafik, logo, ikon, gambar, klip audio, unduhan digital, dan kompilasi data, adalah milik FatApp atau pemberi lisensinya dan dilindungi oleh hukum hak cipta Indonesia dan internasional.
 
 ### 4.2 Lisensi Penggunaan
 FatApp memberikan Anda lisensi terbatas, non-eksklusif, tidak dapat dialihkan, dan dapat dibatalkan untuk mengakses dan menggunakan konten Situs untuk tujuan pribadi dan non-komersial. Anda tidak boleh mereproduksi, mendistribusikan, memodifikasi, atau membuat karya turunan dari konten Situs tanpa izin tertulis dari FatApp.
@@ -72,9 +72,9 @@ FatApp berhak, atas kebijakannya sendiri, untuk menghentikan akses Anda ke Situs
 
 Jika Anda memiliki pertanyaan tentang Ketentuan Penggunaan ini, silakan hubungi kami di:
 
-Email: [info@fatapp.5mb.com](mailto:info@fatapp.5mb.com)
+Email: [info@fatapp.5mb.app](mailto:info@fatapp.5mb.app)
 
-Situs web: [https://fatapp.5mb.com/](https://fatapp.5mb.com/)
+Situs web: [https://fatapp.5mb.app/](https://fatapp.5mb.app/)
 
 ---
 

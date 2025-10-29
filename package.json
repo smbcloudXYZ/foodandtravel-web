@@ -28,7 +28,7 @@
     "remark-directive": "^4.0.0",
     "remark-math": "^6.0.0",
     "sharp": "^0.34.4",
-    "tailwindcss": "^4.1.15",
+    "tailwindcss": "^4.1.16",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {

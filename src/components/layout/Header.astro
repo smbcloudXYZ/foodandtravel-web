@@ -5,7 +5,8 @@ import { Image } from 'astro:assets'
 ---
 
 <header class="mb-7">
-  <nav class="flex justify-between items-center">
+  <nav class="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
+    <!-- Logo Section -->
     <div class="relative flex items-center gap-2">
       {
         SITE.favicon && (
@@ -18,26 +19,125 @@ import { Image } from 'astro:assets'
         >{SITE.title}</a
       >
     </div>
-    <div class="flex items-center gap-4">
-      <div class="flex flex-col gap-2 md:flex-row">
-        <a href="https://apps.apple.com/se/app/fat-4-5-star-restaurants/id6754181320">
-          <Image
-            src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-            alt="FatApp Apple AppStore download badge"
-            width="150"
-            height="50"
-          />
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=xyz.smbcloud.FatApp">
-          <Image
-            src="/images/GetItOnGooglePlay_Badge_Web_color_English.png"
-            alt="FatApp Google Play download badge"
-            width="150"
-            height="50"
-          />
+
+    <!-- Download Links & Theme Toggle Section -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+      <!-- Store Badges Container -->
+      <div class="store-badges-container">
+        <!-- Mobile: Compact View -->
+        <div class="flex items-center gap-2 sm:hidden">
+          <a
+            href="https://apps.apple.com/se/app/fat-4-5-star-restaurants/id6754181320"
+            class="store-badge-link"
+            aria-label="Download on the App Store"
+          >
+            <Image
+              src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+              alt="Download on the App Store"
+              width="120"
+              height="40"
+              class="h-9 w-auto"
+            />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=xyz.smbcloud.FatApp"
+            class="store-badge-link"
+            aria-label="Get it on Google Play"
+          >
+            <Image
+              src="/images/GetItOnGooglePlay_Badge_Web_color_English.png"
+              alt="Get it on Google Play"
+              width="120"
+              height="40"
+              class="h-9 w-auto"
+            />
+          </a>
+        </div>
+
+        <!-- Tablet & Desktop: Full View -->
+        <div class="hidden sm:flex items-center gap-2 lg:gap-3">
+          <a
+            href="https://apps.apple.com/se/app/fat-4-5-star-restaurants/id6754181320"
+            class="store-badge-link transition-transform hover:scale-105 active:scale-95"
+            aria-label="Download on the App Store"
+          >
+            <Image
+              src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+              alt="Download on the App Store"
+              width="135"
+              height="45"
+              class="h-10 w-auto md:h-11"
+            />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=xyz.smbcloud.FatApp"
+            class="store-badge-link transition-transform hover:scale-105 active:scale-95"
+            aria-label="Get it on Google Play"
+          >
+            <Image
+              src="/images/GetItOnGooglePlay_Badge_Web_color_English.png"
+              alt="Get it on Google Play"
+              width="135"
+              height="45"
+              class="h-10 w-auto md:h-11"
+            />
+          </a>
+          <a
+            href="https://apps.microsoft.com/detail/xp9d0tqvt066f6?referrer=appbadge&mode=direct"
+            class="store-badge-link transition-transform hover:scale-105 active:scale-95"
+            aria-label="Get it from Microsoft"
+          >
+            <Image
+              src="https://get.microsoft.com/images/en-us%20dark.svg"
+              alt="Get it from Microsoft"
+              width="135"
+              height="45"
+              class="h-10 w-auto md:h-11"
+            />
+          </a>
+        </div>
+
+        <!-- Mobile: Microsoft Store Link (text only to save space) -->
+        <a
+          href="https://apps.microsoft.com/detail/xp9d0tqvt066f6?referrer=appbadge&mode=direct"
+          class="text-xs text-gray-600 dark:text-gray-400 hover:text-food-orange dark:hover:text-food-orange transition-colors sm:hidden mt-1"
+          aria-label="Also available on Microsoft Store"
+        >
+          Also on Microsoft Store →
         </a>
       </div>
-      <ThemeToggle />
+
+      <!-- Theme Toggle -->
+      <div class="self-end sm:self-auto">
+        <ThemeToggle />
+      </div>
     </div>
   </nav>
 </header>
+
+<style>
+  .store-badge-link {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0.375rem;
+    overflow: hidden;
+  }
+
+  .store-badge-link:focus-visible {
+    outline: 2px solid var(--color-food-orange, #ff6b35);
+    outline-offset: 2px;
+  }
+
+  .store-badges-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .store-badges-container {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+</style>

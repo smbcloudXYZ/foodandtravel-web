@@ -1,0 +1,23 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "2TQF86ZACD.xyz.smbcloud.FatApp",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "2TQF86ZACD.xyz.smbcloud.FatApp"
+    ]
+  },
+  "appclips": {
+    "apps": [
+      "2TQF86ZACD.xyz.smbcloud.FatApp.Clip"
+    ]
+  }
+}

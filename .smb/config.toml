@@ -1,10 +1,12 @@
 name = "fatappweb"
 description = "FatApp web."
+
 [project]
-id = 87
+id = 3
 name = "fatappweb"
 runner = 0
-repository = "fatappweb"
+deployment_method = 0
 description = "fatappweb"
-created_at = "2025-07-12T09:52:43.117655+00:00"
-updated_at = "2025-07-12T09:52:43.117655+00:00"
+frontend_app_id = "6e84599a-5f5e-4c12-aee6-b766023a8901"
+created_at = "2025-07-12T09:52:43.117655Z"
+updated_at = "2025-07-12T09:52:43.117655Z"

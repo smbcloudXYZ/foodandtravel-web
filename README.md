@@ -1,12 +1,12 @@
 <!-- LOGO -->
 <p align="center">
-  <img src="./public/web-app-manifest-192x192.png" alt="FatApp Logo" width="128">
+  <img src="./public/web-app-manifest-192x192.png" alt="Fat app Logo" width="128">
 </p>
 
-<h1 align="center">FatApp</h1>
+<h1 align="center">Fat app</h1>
 
 <p align="center">
-  The public web home for FatApp.
+  The public web home for Fat app.
   <br />
   A clean Astro site for app updates, store links, and product content around 4.5+ star restaurants.
   <br />
@@ -15,7 +15,7 @@
   ·
   <a href="https://apps.apple.com/se/app/fat-4-5-star-restaurants/id6754181320">App Store</a>
   ·
-  <a href="https://play.google.com/store/apps/details?id=xyz.smbcloud.FatApp">Google Play</a>
+  <a href="https://play.google.com/store/apps/details?id=xyz.smbcloud.Fat app">Google Play</a>
   ·
   <a href="LICENSE">License</a>
 </p>
@@ -29,9 +29,9 @@
 
 ## About
 
-`fatapp-web` is the public website for FatApp.
+`fatapp-web` is the public website for Fat app.
 
-It is where FatApp lives on the web: app updates, launch posts, store links, and product pages for people looking for 4.5+ star restaurants.
+It is where Fat app lives on the web: app updates, launch posts, store links, and product pages for people looking for 4.5+ star restaurants.
 
 ## What this repo contains
 

@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.smbcloud.FatApp",
+      "sha256_cert_fingerprints": [
+        "1B:12:AC:BE:A4:ED:69:A7:D8:CA:0B:C0:B2:8C:08:32:6A:4D:C8:ED:94:C3:93:BB:C0:E7:12:7E:70:73:23:A9"
+      ]
+    }
+  }
+]

@@ -1,25 +1,79 @@
-# FatApp
+<!-- LOGO -->
+<p align="center">
+  <img src="./public/web-app-manifest-192x192.png" alt="FatApp Logo" width="128">
+</p>
 
-FatApp is a simple directory of top-rated restaurants — curated listings of establishments with 4.5+ star ratings. Use FatApp to discover highly rated dining experiences, view reviews and photos, and find places by cuisine, price range, and amenities.
+<h1 align="center">FatApp</h1>
 
-## Quick start
+<p align="center">
+  The public web home for FatApp.
+  <br />
+  A clean Astro site for app updates, store links, and product content around 4.5+ star restaurants.
+  <br />
+  <br />
+  <a href="https://fatapp.5mb.app/">Website</a>
+  ·
+  <a href="https://apps.apple.com/se/app/fat-4-5-star-restaurants/id6754181320">App Store</a>
+  ·
+  <a href="https://play.google.com/store/apps/details?id=xyz.smbcloud.FatApp">Google Play</a>
+  ·
+  <a href="LICENSE">License</a>
+</p>
 
-- Clone the repository
-- Install dependencies: `npm install`
-- Run the development server: `npm run dev`
-- Build for production: `npm run build`
-- Preview the production build: `npm run preview`
+<p align="center">
+  <a href="https://smbcloud.xyz/"><img alt="Runs on smbCloud" src="https://img.shields.io/badge/Runs%20on-smbCloud-0f172a?style=for-the-badge"></a>
+  <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <img alt="Astro 5" src="https://img.shields.io/badge/Astro-5-black?logo=astro">
+  <img alt="Tailwind CSS 4" src="https://img.shields.io/badge/TailwindCSS-4-38bdf8?logo=tailwindcss&logoColor=white">
+</p>
 
-(Commands assume a standard Astro setup with scripts provided in `package.json`.)
+## About
 
-## Deploy on smbCloud
+`fatapp-web` is the public website for FatApp.
 
-You can deploy FatApp quickly using smbCloud:
+It is where FatApp lives on the web: app updates, launch posts, store links, and product pages for people looking for 4.5+ star restaurants.
 
-[![Deploy to smbCloud](https://github.com/smbcloudXYZ/smbcloud-cli/blob/development/deploy.svg)](https://smbcloud.xyz)
+## What this repo contains
 
-Follow smbCloud's deployment flow or your preferred static host to publish the `dist/` output from the Astro build.
+- `src/pages/` — site routes
+- `src/content/` — about page and posts
+- `src/components/` — shared UI
+- `public/` — icons, store badges, and static assets
+- `.smb/config.toml` — smbCloud deploy configuration
 
-## License
+## Local development
 
-MIT
+Requirements:
+
+- Node.js `v24.12.0`
+- `pnpm`
+
+Install dependencies and start the dev server:
+
+```sh
+pnpm install
+pnpm dev
+```
+
+Useful commands:
+
+```sh
+pnpm lint
+pnpm build
+pnpm preview
+pnpm start-fatappweb
+```
+
+## Deploying with smbCloud
+
+This repo includes `.smb/config.toml`.
+
+Deploy from the repo root with:
+
+```sh
+smb deploy
+```
+
+## Copyright
+
+© 2026 [smbCloud](https://smbcloud.xyz) (Splitfire AB).

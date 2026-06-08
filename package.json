@@ -17,32 +17,32 @@
     "start-fatappweb": "astro start -p 5002"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/sitemap": "^3.7.0",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.15",
-    "katex": "^0.16.27",
+    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^5.18.2",
+    "katex": "^0.16.47",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
     "rehype-katex": "^7.0.1",
     "remark-directive": "^4.0.0",
     "remark-math": "^6.0.0",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.3.0",
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
-    "@typescript-eslint/eslint-plugin": "^8.53.1",
-    "@typescript-eslint/parser": "^8.53.1",
-    "eslint": "^9.39.2",
+    "@eslint/js": "^9.39.4",
+    "@typescript-eslint/eslint-plugin": "^8.60.1",
+    "@typescript-eslint/parser": "^8.60.1",
+    "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-astro": "^1.7.0",
     "globals": "^16.5.0",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.4",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.53.1"
+    "typescript-eslint": "^8.60.1"
   }
 }

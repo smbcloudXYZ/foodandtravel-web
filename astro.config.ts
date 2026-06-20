@@ -48,9 +48,13 @@ export default defineConfig({
     build: {
       rollupOptions: {
         output: {
-          manualChunks: {
-            'vendor-katex': ['katex'],
-            'vendor-utils': ['reading-time', 'mdast-util-to-string']
+          manualChunks(id) {
+            if (id.includes('node_modules/katex')) return 'vendor-katex'
+            if (
+              id.includes('node_modules/reading-time') ||
+              id.includes('node_modules/mdast-util-to-string')
+            )
+              return 'vendor-utils'
           }
         }
       }

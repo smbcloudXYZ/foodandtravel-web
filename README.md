@@ -76,4 +76,4 @@ smb deploy
 
 ## Copyright
 
-© 2026 [smbCloud](https://smbcloud.xyz) (Splitfire AB).
+© 2026 Siti Munzaenatun. Distributed by [Splitfire AB](https://5mb.app).

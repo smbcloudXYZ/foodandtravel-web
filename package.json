@@ -17,10 +17,10 @@
     "start-fatappweb": "astro start -p 5002"
   },
   "dependencies": {
-    "@astrojs/mdx": "^6.0.3",
+    "@astrojs/mdx": "^7.0.5",
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^6.4.8",
+    "astro": "^7.2.2",
     "katex": "^0.16.47",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
@@ -30,11 +30,6 @@
     "sharp": "^0.34.5",
     "tailwindcss": "^4.3.3",
     "unist-util-visit": "^5.1.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "esbuild": ">=0.28.1"
-    }
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
